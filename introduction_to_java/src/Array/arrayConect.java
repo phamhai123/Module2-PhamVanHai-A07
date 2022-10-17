@@ -2,7 +2,7 @@ package Array;
 
 import java.util.Scanner;
 
-public class arrayConect {
+public class ArrayConect {
     public static void main(String[] args) {
         int[] arrA = new int[0];
         int[] arrB = new int[0];

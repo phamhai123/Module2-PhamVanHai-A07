@@ -1,6 +1,6 @@
 package Loop;
 
-public class primeSmall {
+public class PrimeSmall {
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
             if(printPrime(i)==true){

@@ -2,7 +2,7 @@ package Array;
 
 import java.util.Scanner;
 
-public class createArray {
+public class CreateArray {
 
 
     public static void main(String[] args) {

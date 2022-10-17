@@ -7,7 +7,7 @@ public class CountNumber {
         String a = "Hai pham 112002D đi đâu thế";
         Scanner sc = new Scanner(System.in);
         int count = 0;
-        char comment = sc.next().charAt(0);
+        char comment = sc.nextLine().charAt(0);
         for (int i = 0; i < a.length(); i++) {
             if(a.charAt(i)==comment){
                 count++;
