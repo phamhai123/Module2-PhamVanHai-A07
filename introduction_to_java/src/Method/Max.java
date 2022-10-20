@@ -6,11 +6,11 @@ public class Max {
         int max = arr[0][0];
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                if(arr[i][j]>max){
+                if(arr[i][j] > max){
                     max = arr[i][j];
                 }
             }
         }
-        System.out.println("Giá trị lớn nhất: "+max);
+        System.out.println("Giá trị lớn nhất: " + max);
     }
 }

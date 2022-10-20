@@ -11,6 +11,6 @@ public class SumTwo {
                 }
             }
         }
-        System.out.println("Tổng đường chéo là: "+sum);
+        System.out.println("Tổng đường chéo là: " + sum);
     }
 }

@@ -12,6 +12,6 @@ public class ArraySum {
         for (int i = 0; i < arr[id].length; i++) {
             sum += arr[id][i];
         }
-        System.out.println("Tổng cột "+id+" là: "+sum);
+        System.out.println("Tổng cột " + id + " là: " + sum);
     }
 }
