@@ -1,9 +1,9 @@
 package ClassAndObject;
 
 public class Fan {
-    final int SLOW = 1;
-    final int MEDIUM = 2;
-    final int FAST = 3;
+    private final int SLOW = 1;
+    private final int MEDIUM = 2;
+    private final int FAST = 3;
     private int speed = SLOW;
     private boolean on = false;
     private double radius = 5;
@@ -48,7 +48,7 @@ public class Fan {
                     "speed=" + speed +
                     ", radius=" + radius +
                     ", color='" + color + '\'' +
-                    ", fan is off" +
+                    ", fan is on" +
                     '}';
         }else {
             return "Fan{" +

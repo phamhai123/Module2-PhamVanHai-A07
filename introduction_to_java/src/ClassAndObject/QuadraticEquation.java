@@ -3,9 +3,9 @@ package ClassAndObject;
 import java.util.Scanner;
 
 public class QuadraticEquation {
-    private double a;
-    private double b;
-    private double c;
+    private final double a;
+    private final double b;
+    private final double c;
 
     public QuadraticEquation(double a, double b, double c) {
         this.a = a;
