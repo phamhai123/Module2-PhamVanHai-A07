@@ -3,11 +3,10 @@ package ClassAndObject;
 import java.util.Scanner;
 
 public class QuadraticEquation {
-    private final double a;
-    private final double b;
-    private final double c;
+    private double a, b, c;
 
     public QuadraticEquation(double a, double b, double c) {
+
         this.a = a;
         this.b = b;
         this.c = c;
@@ -26,15 +25,15 @@ public class QuadraticEquation {
     }
 
     public double getDiscriminant() {
-        return this.b*2-4*this.a*this.c;
+        return this.b * this.b - 4 * this.a * this.c;
     }
 
     public double getRoot1() {
-        return (-this.b+Math.sqrt(Math.pow(this.b,2)-4*this.a*this.c))/2*this.a;
+        return (-this.b + Math.sqrt(Math.pow(this.b, 2) - 4 * this.a * this.c)) / 2 * this.a;
     }
 
     public double getRoot2() {
-        return (-this.b-Math.sqrt(Math.pow(this.b,2)-4*this.a*this.c))/2*this.a;
+        return (-this.b - Math.sqrt(Math.pow(this.b, 2) - 4 * this.a * this.c)) / 2 * this.a;
     }
 
     public static void main(String[] args) {
@@ -46,14 +45,13 @@ public class QuadraticEquation {
         System.out.println("Enter C:");
         double c = sc.nextDouble();
 
-        QuadraticEquation equation = new QuadraticEquation(a,b,c);
+        QuadraticEquation equation = new QuadraticEquation(a, b, c);
 
-        if(equation.getDiscriminant() > 0){
+        if (equation.getDiscriminant() > 0) {
             System.out.println("The equation has two roots " + equation.getRoot1() + " and " + equation.getRoot2());
-        }
-        else if (equation.getDiscriminant() == 0) {
+        } else if (equation.getDiscriminant() == 0) {
             System.out.println("The equation has ones root " + equation.getRoot1());
-        }else {
+        } else {
             System.out.println("The equation has not roots ");
         }
 

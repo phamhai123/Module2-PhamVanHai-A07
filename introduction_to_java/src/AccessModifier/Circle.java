@@ -17,11 +17,11 @@ public class Circle {
     }
 
     @Override
-    public String toString() {
+    public String toString()     {
         return "Circle{" + "radius=" + radius + ", color='" + color + '\'' + "Area=" + getArea() + '}';
     }
 
     public double getArea() {
-        return radius * Math.PI;
+        return radius * radius * Math.PI;
     }
 }
