@@ -1,4 +1,4 @@
-package task01.controllers;
+package mvc.controllers;
 
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class FuramaController {
         int choose;
         do {
             choose = sc.nextInt();
-            switch (choose){
+            switch (choose) {
                 case 1:
                     System.out.println("Employee Management");
                     break;
@@ -30,10 +30,10 @@ public class FuramaController {
                 case 5:
                     System.out.println("Promotion Management");
                     break;
+                default:
+                    System.out.println("Incorrect input, please re-enter!");
             }
-        }while (choose != 6);
+        } while (choose != 6 || choose <= 6 && choose > 0);
     }
-    public static String isEmployee() {
-            return ;
-    }
+
 }
