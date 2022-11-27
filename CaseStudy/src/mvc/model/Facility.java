@@ -57,4 +57,15 @@ public abstract class Facility {
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
+
+    @Override
+    public String toString() {
+        return "Facility{" +
+                "nameService='" + serviceName + '\'' +
+                ", areaUsable=" + usableArea +
+                ", costRental=" + rentalCost +
+                ", maxPeople=" + maxPeople +
+                ", typeRental='" + rentalType + '\'' +
+                '}';
+    }
 }

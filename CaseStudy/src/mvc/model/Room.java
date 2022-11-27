@@ -23,4 +23,15 @@ public class Room extends Facility {
         this.freeService = freeService;
     }
 
+    @Override
+    public String toString() {
+        return "Room{" +
+                "nameService='" + super.getServiceName() + '\'' +
+                ", areaUsable=" + super.getUsableArea() +
+                ", costRental=" + super.getRentalCost() +
+                ", maxPeople=" + super.getMaxPeople() +
+                ", typeRental='" + super.getRentalType() + '\'' +
+                "freeService='" + freeService + '\'' +
+                '}';
+    }
 }

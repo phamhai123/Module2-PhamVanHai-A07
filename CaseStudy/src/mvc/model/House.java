@@ -1,8 +1,8 @@
 package mvc.model;
 
 public class House extends Facility {
-    private String roomStandard = "5 sao";
-    private int numberFloor = 1;
+    private String roomStandard;
+    private int numberFloor;
     public House() {
         
     }
@@ -36,6 +36,11 @@ public class House extends Facility {
     @Override
     public String toString() {
         return "House{" +
+                "nameService='" + super.getServiceName() + '\'' +
+                ", areaUsable=" + super.getUsableArea() +
+                ", costRental=" + super.getRentalCost() +
+                ", maxPeople=" + super.getMaxPeople() +
+                ", typeRental='" + super.getRentalType() + '\'' +
                 "roomStandard='" + roomStandard + '\'' +
                 ", numberFloor=" + numberFloor +
                 '}';
