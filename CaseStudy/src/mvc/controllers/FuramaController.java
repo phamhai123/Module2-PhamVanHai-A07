@@ -12,7 +12,8 @@ public class FuramaController {
     public static void main(String[] args) {
 //        displayMainMenu();
 //        IsFacility.isFacility();
-        IsCustomer.isCustomer();
+//        IsCustomer.isCustomer();
+        IsEmployee.isEmployee();
     }
     public static Scanner scanner = new Scanner(System.in);
     private static LinkedList<Customer> lists = new LinkedList<>();

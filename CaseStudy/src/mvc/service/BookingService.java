@@ -1,5 +1,5 @@
 package mvc.service;
 
-public interface BookingService extends Service {
+public interface BookingService{
     void addBooking();
 }

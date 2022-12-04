@@ -1,18 +1,18 @@
 package mvc.model;
 
-public class Customer extends Person{
+import java.io.Serializable;
+import java.util.Date;
+
+public class Customer extends Person implements Serializable {
     private String typeGuest;
     private String address;
-
-    public Customer() {
-    }
 
     public Customer(String typeGuest, String address) {
         this.typeGuest = typeGuest;
         this.address = address;
     }
 
-    public Customer(int id, String name, int birthDate, String sex, int identityCard, int phoneNumber, String email, String typeGuest, String address) {
+    public Customer(int id, String name, String birthDate, String sex, double identityCard, double phoneNumber, String email, String typeGuest, String address) {
         super(id, name, birthDate, sex, identityCard, phoneNumber, email);
         this.typeGuest = typeGuest;
         this.address = address;
@@ -35,8 +35,13 @@ public class Customer extends Person{
     }
 
     @Override
+    public String getInfo() {
+        return String.format("%s, %s, %s, %s, %s, %s, %s, %s, %s \n", getId(), getName(), getBirthDate(), getSex(), getIdentityCard(), getPhoneNumber(), getEmail(), getTypeGuest(), getAddress());
+    }
+
+    @Override
     public String toString() {
-        return "Customer{" +"id=" + super.getId() +
+        return "Customer{" + "id=" + super.getId() +
                 ", name='" + super.getName() + '\'' +
                 ", birthDate=" + super.getBirthDate() +
                 ", sex='" + super.getSex() + '\'' +
@@ -46,5 +51,5 @@ public class Customer extends Person{
                 "typeGuest='" + typeGuest + '\'' +
                 ", address='" + address + '\'' +
                 '}';
-   }
+    }
 }

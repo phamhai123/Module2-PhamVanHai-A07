@@ -1,18 +1,20 @@
 package mvc.model;
 
+import java.util.Date;
+
 public abstract class Person {
     private int id;
     private String name;
-    private int birthDate;
+    private String birthDate ;
     private String sex;
-    private int identityCard;
-    private int phoneNumber;
+    private double identityCard;
+    private double phoneNumber;
     private String email;
 
     public Person() {
     }
 
-    public Person(int id, String name, int birthDate, String sex, int identityCard, int phoneNumber, String email) {
+    public Person(int id, String name, String birthDate, String sex, double identityCard, double phoneNumber, String email) {
         this.id = id;
         this.name = name;
         this.birthDate = birthDate;
@@ -38,11 +40,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(int birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -54,7 +56,7 @@ public abstract class Person {
         this.sex = sex;
     }
 
-    public int getIdentityCard() {
+    public double getIdentityCard() {
         return identityCard;
     }
 
@@ -62,7 +64,7 @@ public abstract class Person {
         this.identityCard = identityCard;
     }
 
-    public int getPhoneNumber() {
+    public double getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -77,7 +79,7 @@ public abstract class Person {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    public abstract String getInfo();
     @Override
     public String toString() {
         return "Person{" +

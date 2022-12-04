@@ -1,2 +1,4 @@
-package mvc.utils;public class RegexFacilityUtil {
+package mvc.utils;
+
+public class RegexFacilityUtils {
 }

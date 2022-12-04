@@ -1,12 +1,17 @@
 package mvc.model;
 
-public class Employee extends Person {
+import java.io.Serializable;
+import java.util.Date;
+
+public class Employee extends Person implements Serializable {
     private String level;
     private String position;
     private double salary;
+
     public Employee() {
 
     }
+
 
     public Employee(String level, String position, double salary) {
         this.level = level;
@@ -15,7 +20,7 @@ public class Employee extends Person {
     }
 
 
-    public Employee(int id, String name, int birthDate, String sex, int identityCard, int phoneNumber, String email, String level, String position, double salary) {
+    public Employee(int id, String name, String birthDate, String sex, double identityCard, double phoneNumber, String email, String level, String position, double salary) {
         super(id, name, birthDate, sex, identityCard, phoneNumber, email);
         this.level = level;
         this.position = position;
@@ -47,6 +52,11 @@ public class Employee extends Person {
     }
 
     @Override
+    public String getInfo() {
+        return String.format("%s, %s, %s, %s, %s, %s, %s, %s, %s, %s \n", getId(), getName(), getBirthDate(), getSex(), getIdentityCard(), getPhoneNumber(), getEmail(), getLevel(), getPosition(), getSalary());
+    }
+
+    @Override
     public String toString() {
         return "Employee{" +
                 "id=" + super.getId() +
@@ -56,7 +66,7 @@ public class Employee extends Person {
                 ", identityCard=" + super.getIdentityCard() +
                 ", phoneNumber=" + super.getPhoneNumber() +
                 ", email='" + super.getEmail() + '\'' +
-                "level='" + level + '\'' +
+                ", level='" + level + '\'' +
                 ", position='" + position + '\'' +
                 ", salary=" + salary +
                 '}';
