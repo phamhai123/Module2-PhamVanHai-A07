@@ -57,7 +57,7 @@ public abstract class Facility {
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
-
+    public abstract String getInfo();
     @Override
     public String toString() {
         return "Facility{" +

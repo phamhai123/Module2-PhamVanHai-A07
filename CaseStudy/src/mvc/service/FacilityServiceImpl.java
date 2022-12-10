@@ -4,7 +4,9 @@ import mvc.model.Facility;
 import mvc.model.House;
 import mvc.model.Room;
 import mvc.model.Villa;
+import mvc.utils.ReadAndWriteFacility;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -56,7 +58,7 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void addHouse() {
-
+        Map<House, Integer> houseMap = new LinkedHashMap<>();
         System.out.println("Nhập Diện tích sử dụng :");
         float area = scanner.nextFloat();
         System.out.println("Nhập Chi phí thuê :");
@@ -69,7 +71,8 @@ public class FacilityServiceImpl implements FacilityService {
         String standard = scanner.next();
         System.out.println("Nhâp số tầng cho thuê :");
         int floor = scanner.nextInt();
-        facilityMap.put(new House("House",area,cost,max,type,standard,floor),0);
+        houseMap.put(new House("House",area,cost,max,type,standard,floor),0);
+        ReadAndWriteFacility.writeToFile(houseMap);
     }
 
     @Override

@@ -1,8 +1,9 @@
-package mvc.utils;
+package mvc.validate;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,27 +11,55 @@ import java.util.regex.Pattern;
 public class RegexPersonUtils {
     private static final String OLD_FORMAT = "dd/MM/yyyy";
     private static final String EMAIL_REGEX = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
+    private static final String IDCARD = "^[0-9]{12}$";
     private static final String PHONE_NUMBER = "^(\\d{3}[- ]?){2}\\d{4}$";
+    private static final String ID = "^[0-9]{0,4}$";
+    private static final String NAME = "^[A-Z].*";
     private static Scanner scanner = new Scanner(System.in);
-    public static int isId(){
-        System.out.println("Enter id :");
-        return scanner.nextInt();
+    public static String isId() {
+        Pattern p = Pattern.compile(ID);
+        String id;
+        while (true) {
+            System.out.println("Enter id");
+            id = scanner.nextLine();
+            if (p.matcher(id).find()) {
+                System.out.println("Id right");
+                break;
+            } else {
+                System.out.println("Id not ok");
+            }
+        }
+        return id;
     }
     public static String isName(){
-        System.out.println("Enter name :");
-        return scanner.next();
+        Pattern p = Pattern.compile(NAME);
+        String name;
+        while (true) {
+            System.out.println("Enter Name");
+            name = scanner.nextLine();
+            if (p.matcher(name).find()) {
+                System.out.println("Name right");
+                break;
+            } else {
+                System.out.println("Name not ok");
+            }
+        }
+        return name;
     }
     public static String isBirthDate() {
         SimpleDateFormat dateFormat = new SimpleDateFormat(OLD_FORMAT);
         System.out.println("Enter birth date " + OLD_FORMAT);
         String date = null;
-        Date day = null;
+        Date day;
         do {
             try {
-                date = scanner.next();
+                date = scanner.nextLine();
+                day = dateFormat.parse(date);
+                dateFormat.setLenient(false);
                 day = dateFormat.parse(date);
             } catch (ParseException e) {
                 System.out.println("Enter error, please re-enter ! ==" + OLD_FORMAT +"==");
+                day = null;
             }
         }while (day == null);
         return date;
@@ -41,7 +70,7 @@ public class RegexPersonUtils {
             System.out.println("Choose sex:\n" +
                     "1. Male \n" +
                     "2. Female \n");
-            switch (sex = scanner.next()){
+            switch (sex = scanner.nextLine()){
                 case "1":
                     sex = "Male";
                     break;
@@ -55,13 +84,35 @@ public class RegexPersonUtils {
         }while (sex == null);
         return sex;
     }
-    public static double isIdentityCard() {
-        System.out.println("Enter identity card :");
-        return scanner.nextDouble();
+    public static String isIdentityCard() {
+        Pattern p = Pattern.compile(IDCARD);
+        String idCard;
+        while (true) {
+            System.out.println("Enter identity card :");
+            idCard = scanner.nextLine();
+            if (p.matcher(idCard).find()) {
+                System.out.println("identity card right");
+                break;
+            } else {
+                System.out.println("identity card not ok");
+            }
+        }
+        return idCard;
     }
-    public static double isPhoneNumber() {
-        System.out.println("Enter phone number :");
-        return scanner.nextDouble();
+    public static String isPhoneNumber() {
+        Pattern p = Pattern.compile(PHONE_NUMBER);
+        String phone;
+        while (true) {
+            System.out.println("Enter phone number :");
+            phone = scanner.nextLine();
+            if (p.matcher(phone).find()) {
+                System.out.println("Phone number right");
+                break;
+            } else {
+                System.out.println("Phone number not ok");
+            }
+        }
+        return phone;
     }
     public static String isEmail() {
         boolean isvalid;
@@ -144,7 +195,7 @@ public class RegexPersonUtils {
     }
     public static String isPosition() {
         String choose;
-        do {
+        while (true) {
             System.out.println("1. Receptionist \n"+
                     "2. Waiter \n" +
                     "3. Specialist \n" +
@@ -171,12 +222,10 @@ public class RegexPersonUtils {
                     choose = "Director";
                     break;
                 default:
-                    choose = null;
+//                    choose = null;
                     System.out.println("Enter error, please re-ent !");
             }
-        }while (choose == null);
-
-        return choose;
+        }
     }
     public static double isSalary() {
         System.out.println("Enter salary of employee :");

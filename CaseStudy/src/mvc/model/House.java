@@ -3,9 +3,16 @@ package mvc.model;
 public class House extends Facility {
     private String roomStandard;
     private int numberFloor;
+
     public House() {
-        
+
     }
+
+    @Override
+    public String getInfo() {
+        return String.format("%s, %s, %s, %s, %s, %s, %s \n", getServiceName(), getUsableArea(), getRentalCost(), getMaxPeople(), getRentalType(), getRoomStandard(), getNumberFloor());
+    }
+
     public House(String roomStandard, int numberFloor) {
         this.roomStandard = roomStandard;
         this.numberFloor = numberFloor;

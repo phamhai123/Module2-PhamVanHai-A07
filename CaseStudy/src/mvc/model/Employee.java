@@ -3,7 +3,7 @@ package mvc.model;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Employee extends Person implements Serializable {
+public class Employee extends Person {
     private String level;
     private String position;
     private double salary;

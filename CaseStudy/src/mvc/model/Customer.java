@@ -36,7 +36,7 @@ public class Customer extends Person implements Serializable {
 
     @Override
     public String getInfo() {
-        return String.format("%s, %s, %s, %s, %s, %s, %s, %s, %s \n", getId(), getName(), getBirthDate(), getSex(), getIdentityCard(), getPhoneNumber(), getEmail(), getTypeGuest(), getAddress());
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s\n", getId(), getName(), getBirthDate(), getSex(), getIdentityCard(), getPhoneNumber(), getEmail(), getTypeGuest(), getAddress());
     }
 
     @Override

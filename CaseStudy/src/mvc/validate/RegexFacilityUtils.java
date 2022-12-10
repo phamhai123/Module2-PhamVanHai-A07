@@ -1,4 +1,4 @@
-package mvc.utils;
+package mvc.validate;
 
 public class RegexFacilityUtils {
 }

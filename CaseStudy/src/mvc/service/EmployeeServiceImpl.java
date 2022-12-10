@@ -2,10 +2,8 @@ package mvc.service;
 
 import mvc.model.Employee;
 import mvc.utils.ReadAndWriteEmployee;
-import mvc.utils.RegexPersonUtils;
+import mvc.validate.RegexPersonUtils;
 
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,12 +20,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void create() {
-        int id = RegexPersonUtils.isId();
+        int id = Integer.parseInt(RegexPersonUtils.isId());
         String name = RegexPersonUtils.isName();
         String birthDate = RegexPersonUtils.isBirthDate();
         String sex = RegexPersonUtils.isSex();
-        double identityCard = RegexPersonUtils.isIdentityCard();
-        double phoneNumber = RegexPersonUtils.isPhoneNumber();
+        double identityCard = Double.parseDouble(RegexPersonUtils.isIdentityCard());
+        double phoneNumber = Double.parseDouble(RegexPersonUtils.isPhoneNumber());
         String email = RegexPersonUtils.isEmail();
         String level = RegexPersonUtils.isLevelEmp();
         String position = RegexPersonUtils.isPosition();
@@ -45,8 +43,8 @@ public class EmployeeServiceImpl implements EmployeeService {
                 String name = RegexPersonUtils.isName();
                 String birthDate = RegexPersonUtils.isBirthDate();
                 String sex = RegexPersonUtils.isSex();
-                double identityCard = RegexPersonUtils.isIdentityCard();
-                double phoneNumber = RegexPersonUtils.isPhoneNumber();
+                double identityCard = Double.parseDouble(RegexPersonUtils.isIdentityCard());
+                double phoneNumber = Double.parseDouble(RegexPersonUtils.isPhoneNumber());
                 String email = RegexPersonUtils.isEmail();
                 String level = RegexPersonUtils.isLevelEmp();
                 String position = RegexPersonUtils.isPosition();

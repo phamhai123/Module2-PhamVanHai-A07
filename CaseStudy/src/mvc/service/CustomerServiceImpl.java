@@ -2,7 +2,7 @@ package mvc.service;
 
 import mvc.model.Customer;
 import mvc.utils.ReadAndWriteCustomer;
-import mvc.utils.RegexPersonUtils;
+import mvc.validate.RegexPersonUtils;
 import java.util.*;
 
 public class CustomerServiceImpl implements CustomerService {
@@ -18,12 +18,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void create(){
-        int id = RegexPersonUtils.isId();
+        int id = Integer.parseInt(RegexPersonUtils.isId());
         String name = RegexPersonUtils.isName();
         String birthDate = RegexPersonUtils.isBirthDate();
         String sex = RegexPersonUtils.isSex();
-        double identityCard = RegexPersonUtils.isIdentityCard();
-        double phoneNumber = RegexPersonUtils.isPhoneNumber();
+        double identityCard = Double.parseDouble(RegexPersonUtils.isIdentityCard());
+        double phoneNumber = Double.parseDouble(RegexPersonUtils.isPhoneNumber());
         String email = RegexPersonUtils.isEmail();
         String typeGuest = RegexPersonUtils.isTypeGuest();
         String address = RegexPersonUtils.isAddress();
@@ -38,16 +38,28 @@ public class CustomerServiceImpl implements CustomerService {
         int index = scanner.nextInt();
         for (int i = 0; i < lists.size() - 1; i++) {
             if (lists.get(i).getId() == index) {
-                int id = RegexPersonUtils.isId();
+                int id = Integer.parseInt(RegexPersonUtils.isId());
                 String name = RegexPersonUtils.isName();
                 String birthDate = RegexPersonUtils.isBirthDate();
                 String sex = RegexPersonUtils.isSex();
-                double identityCard = RegexPersonUtils.isIdentityCard();
-                double phoneNumber = RegexPersonUtils.isPhoneNumber();
+                double identityCard = Double.parseDouble(RegexPersonUtils.isIdentityCard());
+                double phoneNumber = Double.parseDouble(RegexPersonUtils.isPhoneNumber());
                 String email = RegexPersonUtils.isEmail();
                 String typeGuest = RegexPersonUtils.isTypeGuest();
                 String address = RegexPersonUtils.isAddress();
                 lists.set(i, new Customer(id, name, birthDate, sex, identityCard, phoneNumber, email, typeGuest, address));
+                ReadAndWriteCustomer.writeToFile(lists);
+            }
+        }
+    }
+
+    @Override
+    public void delete() {
+        System.out.println("Nhập địa chỉ khách hàng cần xoa:");
+        int index = scanner.nextInt();
+        for (int i = 0; i < lists.size() - 1; i++) {
+            if (lists.get(i).getId() == index) {
+                lists.remove(i);
                 ReadAndWriteCustomer.writeToFile(lists);
             }
         }
