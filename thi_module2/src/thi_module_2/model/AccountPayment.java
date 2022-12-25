@@ -39,15 +39,16 @@ public class AccountPayment extends AccountBank{
         return String.format("%s,%s,%s,%s,%s,%s \n", getId(),getAccountCode(),getAccountName(),getDayCreate(),getCardNumber(),getCoinNumber());
     }
 
-    @Override
-    public String toString() {
-        return "AccountPayment{" +
-                " id=" + super.getId() +
-                ", accountCode=" + super.getAccountCode() +
-                ", accountName='" + super.getAccountName() + '\'' +
-                ", dayCreate='" + super.getDayCreate() + '\'' +
-                ", cardNumber=" + cardNumber +
-                ", coinNumber=" + coinNumber +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "AccountPayment{" +
+//                " id=" + super.getId() +
+//                ", accountCode=" + super.getAccountCode() +
+//                ", accountName='" + super.getAccountName() + '\'' +
+//                ", dayCreate='" + super.getDayCreate() + '\'' +
+//                ", cardNumber=" + cardNumber +
+//                ", coinNumber=" + coinNumber +
+//                '}';
+//    }
+
 }

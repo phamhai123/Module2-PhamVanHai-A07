@@ -53,7 +53,7 @@ public class Employee extends Person {
 
     @Override
     public String getInfo() {
-        return String.format("%s, %s, %s, %s, %s, %s, %s, %s, %s, %s \n", getId(), getName(), getBirthDate(), getSex(), getIdentityCard(), getPhoneNumber(), getEmail(), getLevel(), getPosition(), getSalary());
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", getId(), getName(), getBirthDate(), getSex(), getIdentityCard(), getPhoneNumber(), getEmail(), getLevel(), getPosition(), getSalary());
     }
 
     @Override

@@ -32,6 +32,8 @@ public class ManagementController {
                 case "4":
                     account.find();
                     break;
+                default:
+                    System.out.println("");
         }
     }
 }

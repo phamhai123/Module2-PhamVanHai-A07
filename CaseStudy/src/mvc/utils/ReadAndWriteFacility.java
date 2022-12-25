@@ -16,7 +16,7 @@ public class ReadAndWriteFacility {
             BufferedWriter bw = new BufferedWriter(fw);
             for (Map.Entry<House, Integer> houseEntry: houseMap.entrySet()
             ) {
-                bw.write(houseEntry.getKey().getInfo() + houseEntry.getValue());
+                bw.write(houseEntry.getValue()+houseEntry.getKey().getInfo());
             }
             bw.close();
             fw.close();

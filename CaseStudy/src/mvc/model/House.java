@@ -10,7 +10,7 @@ public class House extends Facility {
 
     @Override
     public String getInfo() {
-        return String.format("%s, %s, %s, %s, %s, %s, %s \n", getServiceName(), getUsableArea(), getRentalCost(), getMaxPeople(), getRentalType(), getRoomStandard(), getNumberFloor());
+        return String.format("%s,%s,%s,%s,%s,%s,%s \n", getServiceName(), getUsableArea(), getRentalCost(), getMaxPeople(), getRentalType(), getRoomStandard(), getNumberFloor());
     }
 
     public House(String roomStandard, int numberFloor) {

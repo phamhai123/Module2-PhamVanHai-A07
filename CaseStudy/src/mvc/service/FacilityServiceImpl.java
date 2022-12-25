@@ -6,13 +6,12 @@ import mvc.model.Room;
 import mvc.model.Villa;
 import mvc.utils.ReadAndWriteFacility;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class FacilityServiceImpl implements FacilityService {
-    private static Map<Facility, Integer> facilityMap = new LinkedHashMap<>();
+    private static LinkedHashMap<Facility, Integer> facilityMap = new LinkedHashMap<>();
     private static Scanner scanner = new Scanner(System.in);
     @Override
     public void display() {
@@ -21,23 +20,18 @@ public class FacilityServiceImpl implements FacilityService {
             System.out.printf("%s - %s\n", facility.getKey(), facility.getValue());
         }
     }
-//
-//    @Override
-//    public void create() {
-//
-//    }
-//
-//    @Override
-//    public void edit() {
-//
-//    }
-//
-//    @Override
-//    public void delete() {
-
-//    }
 
     @Override
+    public void create() {
+
+    }
+
+    @Override
+    public void edit() {
+
+    }
+
+
     public void addVilla() {
         System.out.println("Nhập Diện tích sử dụng :");
         float area = scanner.nextFloat();
@@ -56,7 +50,6 @@ public class FacilityServiceImpl implements FacilityService {
         facilityMap.put(new Villa("Villa",area,cost,max,type,standard,poolArea,floor),0);
     }
 
-    @Override
     public void addHouse() {
         Map<House, Integer> houseMap = new LinkedHashMap<>();
         System.out.println("Nhập Diện tích sử dụng :");
@@ -75,7 +68,7 @@ public class FacilityServiceImpl implements FacilityService {
         ReadAndWriteFacility.writeToFile(houseMap);
     }
 
-    @Override
+
     public void addRoom() {
         System.out.println("Nhập Diện tích sử dụng :");
         float area = scanner.nextFloat();
