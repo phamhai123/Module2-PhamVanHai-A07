@@ -1,5 +1,6 @@
-package mvc.controllers;
+package mvc.controllers.controllerchild;
 
+import mvc.controllers.FuramaController;
 import mvc.service.CustomerServiceImpl;
 
 public class CustomerController {

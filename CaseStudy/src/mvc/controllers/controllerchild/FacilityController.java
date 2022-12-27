@@ -1,5 +1,6 @@
-package mvc.controllers;
+package mvc.controllers.controllerchild;
 
+import mvc.controllers.FuramaController;
 import mvc.service.FacilityServiceImpl;
 
 public class FacilityController {
@@ -8,7 +9,7 @@ public class FacilityController {
         System.out.println("1. Display list facility \n" +
                 "2. Add new facility \n" +
                 "3. Display list facility maintenance \n" +
-                "4. Return main menu ");
+                "4. Return main menu");
         System.out.print("Choose:");
         String choose = FuramaController.scanner.nextLine();
         switch (choose) {
@@ -18,7 +19,7 @@ public class FacilityController {
                 break;
             case "2":
                 System.out.println("===Add new facility===");
-               facility.edit();
+               facility.create();
                 break;
             case "3":
                 System.out.println("===Display list facility maintenance===");

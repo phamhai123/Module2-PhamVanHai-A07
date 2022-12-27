@@ -1,4 +1,6 @@
-package mvc.controllers;
+package mvc.controllers.controllerchild;
+
+import mvc.controllers.FuramaController;
 
 public class BookingController {
 

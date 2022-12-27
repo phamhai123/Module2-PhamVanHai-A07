@@ -1,5 +1,7 @@
 package mvc.model;
 
+import java.util.Date;
+
 public class Booking {
     private int idBooking;
     private String startDate;

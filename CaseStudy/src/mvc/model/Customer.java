@@ -48,7 +48,7 @@ public class Customer extends Person implements Serializable {
                 ", identityCard=" + super.getIdentityCard() +
                 ", phoneNumber=" + super.getPhoneNumber() +
                 ", email='" + super.getEmail() + '\'' +
-                "typeGuest='" + typeGuest + '\'' +
+                ", typeGuest='" + typeGuest + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }

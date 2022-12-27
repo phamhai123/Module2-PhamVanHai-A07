@@ -2,7 +2,6 @@ package mvc.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -13,8 +12,9 @@ public class InputUntil {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(inputInteger("choose",scanner));
+        System.out.println(inputInteger("choose", scanner));
     }
+
     // Input integer
     public static int inputInteger(String message, Scanner sc) {
         int result = 0;
@@ -40,7 +40,7 @@ public class InputUntil {
                 System.out.println(MESSAGE);
                 return inputInteger(message, sc, regex);
             }
-        }else {
+        } else {
             System.out.println(MESSAGE);
             return inputInteger(message, sc, regex);
         }
@@ -59,23 +59,56 @@ public class InputUntil {
         }
         return result;
     }
-    public static double inputDouble(String message, Scanner sc,String regex) {
+
+    public static double inputDouble(String message, Scanner sc, String regex) {
         double result = 0;
         System.out.println(message);
         String inputValue = sc.nextLine();
-        if(inputValue.matches(regex)){
+        if (inputValue.matches(regex)) {
             try {
                 result = Double.parseDouble(inputValue);
             } catch (Exception e) {
                 System.out.println(MESSAGE);
-                return inputDouble(message, sc,regex);
+                return inputDouble(message, sc, regex);
             }
-        }else {
+        } else {
             System.out.println(MESSAGE);
-            return inputDouble(message, sc,regex);
+            return inputDouble(message, sc, regex);
         }
         return result;
     }
+
+    public static float inputFloat(String message, Scanner sc) {
+        float result = 0;
+        System.out.println(message);
+        String inputValue = sc.nextLine();
+        try {
+            result = Float.parseFloat(inputValue);
+        } catch (Exception e) {
+            System.out.println(MESSAGE);
+            return inputFloat(message, sc);
+        }
+        return result;
+    }
+
+    public static float inputFloat(String message, Scanner sc, String regex) {
+        float result = 0;
+        System.out.println(message);
+        String inputValue = sc.nextLine();
+        if (inputValue.matches(regex)) {
+            try {
+                result = Float.parseFloat(inputValue);
+            } catch (Exception e) {
+                System.out.println(MESSAGE);
+                return inputFloat(message, sc, regex);
+            }
+        } else {
+            System.out.println(MESSAGE);
+            return inputFloat(message, sc, regex);
+        }
+        return result;
+    }
+
     public static String inputString(String message, Scanner sc) {
         System.out.println(message);
         return sc.nextLine();
@@ -126,7 +159,7 @@ public class InputUntil {
                 System.out.println(MESSAGE);
                 return inputList(message, sc, list);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(MESSAGE);
             return inputList(message, sc, list);
         }

@@ -8,7 +8,7 @@ public class Room extends Facility {
 
     @Override
     public String getInfo() {
-        return String.format("%s,%s,%s,%s,%s,%s,\n", getServiceName(), getUsableArea(), getRentalCost(), getMaxPeople(), getRentalType(), getFreeService());
+        return String.format("%s,%s,%s,%s,%s,%s", getServiceName(), getUsableArea(), getRentalCost(), getMaxPeople(), getRentalType(), getFreeService());
     }
 
     public Room(String freeService) {
@@ -36,7 +36,7 @@ public class Room extends Facility {
                 ", costRental=" + super.getRentalCost() +
                 ", maxPeople=" + super.getMaxPeople() +
                 ", typeRental='" + super.getRentalType() + '\'' +
-                "freeService='" + freeService + '\'' +
+                ", freeService='" + freeService + '\'' +
                 '}';
     }
 }

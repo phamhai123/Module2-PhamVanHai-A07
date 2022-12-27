@@ -1,5 +1,6 @@
 package mvc.controllers;
 
+import mvc.controllers.controllerchild.*;
 import mvc.model.Customer;
 
 import java.util.LinkedList;
@@ -9,15 +10,11 @@ import static java.lang.System.exit;
 
 public class FuramaController {
     public static void main(String[] args) {
-//        displayMainMenu();
-//     IsFacility.isFacility();
-//        CustomerController.isCustomer();
-        EmployeeController.isEmployee();
+        FacilityController.isFacility();
     }
 
     public static Scanner scanner = new Scanner(System.in);
     private static LinkedList<Customer> lists = new LinkedList<>();
-
     public static void displayMainMenu() {
         Scanner sc = new Scanner(System.in);
         System.out.println("1. Employee Management\n" +
