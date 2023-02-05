@@ -1,7 +1,7 @@
 package mvc.controllers.controllerchild;
 
 import mvc.controllers.FuramaController;
-import mvc.service.CustomerServiceImpl;
+import mvc.service.Impl.CustomerServiceImpl;
 
 public class CustomerController {
     public static void isCustomer() {
@@ -10,7 +10,7 @@ public class CustomerController {
                 "3. Edit customer \n" +
                 "4. Delete customer \n" +
                 "5. Return main menu");
-        System.out.print("Chosse:");
+        System.out.print("Choose:");
         String choose = FuramaController.scanner.nextLine();
         CustomerServiceImpl customer = new CustomerServiceImpl();
         switch (choose) {
@@ -35,6 +35,10 @@ public class CustomerController {
                 FuramaController.displayMainMenu();
                 break;
         }
+        isCustomer();
+    }
+
+    public static void main(String[] args) {
         isCustomer();
     }
 }

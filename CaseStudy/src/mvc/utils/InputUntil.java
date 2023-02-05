@@ -2,12 +2,14 @@ package mvc.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class InputUntil {
     private static String MESSAGE = "Input invalid!";
+    private static String MESSAGE_ERROR = "Enter error, please re-enter!";
     private static String DATE_FORMAT = "dd/MM/yyyy";
 
     public static void main(String[] args) {
@@ -134,12 +136,28 @@ public class InputUntil {
             dateFormat.setLenient(false);
             dateFormat.parse(value);
         } catch (ParseException e) {
-            System.out.println("Enter error, please re-enter!");
+            System.out.println(MESSAGE_ERROR);
             return inputDate(message, sc);
         }
         return value;
     }
-
+    public static String compareDate(String message,String dateFirstInput,Scanner scanner){
+        SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
+        String dateEndInput = inputDate(message,scanner);
+        try {
+            Date dateFirst = dateFormat.parse(dateFirstInput);
+            Date dateEnd = dateFormat.parse(dateEndInput);
+            int result = dateFirst.compareTo(dateEnd);
+            if(result <= 0){
+                return dateEndInput;
+            }
+        } catch (ParseException e) {
+            System.out.println(MESSAGE_ERROR);
+            return compareDate(message,dateFirstInput,scanner);
+        }
+        System.out.println(MESSAGE);
+        return compareDate(message,dateFirstInput,scanner);
+    }
     public static String inputList(String message, Scanner sc, String list) {
         Map<Integer, String> map = new HashMap<>();
         String[] array = list.split(",");

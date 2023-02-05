@@ -1,8 +1,7 @@
 package mvc.controllers;
 
 import mvc.controllers.controllerchild.*;
-import mvc.model.Customer;
-
+import mvc.model.person.Customer;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -10,7 +9,7 @@ import static java.lang.System.exit;
 
 public class FuramaController {
     public static void main(String[] args) {
-        FacilityController.isFacility();
+         FacilityController.isFacility();
     }
 
     public static Scanner scanner = new Scanner(System.in);

@@ -1,7 +1,7 @@
 package mvc.controllers.controllerchild;
 
 import mvc.controllers.FuramaController;
-import mvc.service.FacilityServiceImpl;
+import mvc.service.Impl.FacilityServiceImpl;
 
 public class FacilityController {
     public static void isFacility() {
@@ -19,7 +19,7 @@ public class FacilityController {
                 break;
             case "2":
                 System.out.println("===Add new facility===");
-               facility.create();
+                facility.create();
                 break;
             case "3":
                 System.out.println("===Display list facility maintenance===");

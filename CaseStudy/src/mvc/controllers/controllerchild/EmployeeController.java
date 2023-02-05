@@ -1,14 +1,14 @@
 package mvc.controllers.controllerchild;
 
 import mvc.controllers.FuramaController;
-import mvc.service.EmployeeServiceImpl;
+import mvc.service.Impl.EmployeeServiceImpl;
 
 public class EmployeeController {
     public static void isEmployee() {
         EmployeeServiceImpl employee = new EmployeeServiceImpl();
         System.out.println("1. Display list employees \n"+
                 "2. Add new employee \n" +
-                "3. Edit employe \n" +
+                "3. Edit employee \n" +
                 "4. Return main menu" );
         System.out.print("Choose:");
         String choose = FuramaController.scanner.nextLine();
@@ -30,6 +30,10 @@ public class EmployeeController {
                 FuramaController.displayMainMenu();
                 break;
         }
+        isEmployee();
+    }
+
+    public static void main(String[] args) {
         isEmployee();
     }
 }
