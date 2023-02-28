@@ -83,7 +83,7 @@ public class BankAccountServiceImpl implements BankAccountService {
         int deleteId = InputUtil.inputInt("Enter id of account need to be deleted", scanner);
         for (BankAccount account: accountList){
             if (account.getId() == deleteId) {
-                accountList.remove(account);
+                accountList.remove(deleteId);
                 count++;
             }
         }

@@ -2,6 +2,7 @@ package mvc.utils;
 
 import mvc.model.booking.Booking;
 import mvc.model.booking.BookingSort;
+import mvc.model.booking.Contract;
 import mvc.model.facility.Facility;
 import mvc.model.facility.House;
 import mvc.model.facility.Room;
@@ -13,10 +14,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.*;
 
 public class FileRead {
     private static String filePath;
@@ -145,11 +143,35 @@ public class FileRead {
                 String customerId = temp[3];
                 String nameServiceId  = temp[4];
                 String typeService = temp[5];
-                bookingList.add(new Booking(bookingId,starDate,endDate,customerId,nameServiceId,typeService));
+                String voucher = temp[6];
+                bookingList.add(new Booking(bookingId,starDate,endDate,customerId,nameServiceId,typeService,voucher));
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return bookingList;
+    }
+    public static LinkedHashSet<Contract> readFromFileContract(String filePath) {
+        LinkedHashSet<Contract> listContract = new LinkedHashSet<>();
+        try {
+            FileReader fileReader = new FileReader(filePath);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line = "";
+            String temp[];
+            while ((line = bufferedReader.readLine()) != null){
+                temp = line.split(",");
+                int idContract = Integer.parseInt(temp[0]);
+                String idBooking = temp[1];
+                double deposit = Double.parseDouble(temp[2]);
+                double sumPay = Double.parseDouble(temp[3]);
+                String idCustomer = temp[4];
+                listContract.add(new Contract(idContract,idBooking,deposit,sumPay,idCustomer));
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return listContract;
     }
 }

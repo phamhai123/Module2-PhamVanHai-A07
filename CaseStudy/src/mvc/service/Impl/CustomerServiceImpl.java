@@ -32,6 +32,7 @@ public class CustomerServiceImpl implements CustomerService, RegexLibrary {
         }
     }
 
+
     @Override
     public void create() {
         String name = InputUntil.inputString("Enter customer name:", scanner, NAME_VN_REGEX);
@@ -79,9 +80,8 @@ public class CustomerServiceImpl implements CustomerService, RegexLibrary {
         display();
         int count = 0;
         int deleteId = InputUntil.inputInteger("Enter the customer's address to delete:", scanner);
-        for (Customer customer : lists) {
+        OUT: for (Customer customer : lists) {
             if (customer.getId() == deleteId) {
-                OUT:
                 do {
                     count++;
                     System.out.println("Do you want to delete!");
@@ -89,7 +89,7 @@ public class CustomerServiceImpl implements CustomerService, RegexLibrary {
                     System.out.print("Choose:");
                     switch (scanner.nextLine()) {
                         case "1":
-                            lists.remove(deleteId);
+                            lists.remove(customer);
                             System.out.println("Successful delete!");
                             ReadAndWriteCustomer.writeToFile(lists);
                             break OUT;

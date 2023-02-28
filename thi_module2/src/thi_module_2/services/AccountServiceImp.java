@@ -4,7 +4,8 @@
     import thi_module_2.model.AccountPayment;
     import thi_module_2.model.AccountSaving;
     import thi_module_2.util.ReadAndWriteFile;
-    
+    import thi_module_2.validate.RegexAccount;
+
     import java.util.ArrayList;
     import java.util.Scanner;
     
@@ -23,7 +24,7 @@
                     System.out.println("Enter name account");
                     String name = sc.next();
                     System.out.println("Enter day create");
-                    String dayCreate = sc.next();
+                    String dayCreate = RegexAccount.inputDate(sc);
                     System.out.println("Enter card");
                     double card = sc.nextDouble();
                     System.out.println("Enter coin");
@@ -37,11 +38,11 @@
                     System.out.println("Enter name account");
                     String name = sc.next();
                     System.out.println("Enter day create");
-                    String dayCreate = sc.next();
+                    String dayCreate = RegexAccount.inputDate(sc);;
                     System.out.println("Enter coin saving");
                     double coinSave = sc.nextDouble();
                     System.out.println("Enter day saving");
-                    String daySave = sc.next();
+                    String daySave = RegexAccount.inputDate(sc);;
                     System.out.println("Enter interest rate");
                     double interestRate = sc.nextDouble();
                     System.out.println("Enter date saving");

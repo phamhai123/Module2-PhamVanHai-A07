@@ -6,7 +6,9 @@ public class Contract implements Comparable<Contract> {
     private double deposit;
     private double sumPay;
     private String idCustomer;
-
+    public String getInfo() {
+        return String.format("%s,%s,%s,%s,%s",idContract,idBooking,deposit,sumPay,idCustomer);
+    }
     public Contract() {
     }
 
@@ -71,6 +73,6 @@ public class Contract implements Comparable<Contract> {
 
     @Override
     public int compareTo(Contract o) {
-        return 0;
+        return o.idContract-o.idContract;
     }
 }

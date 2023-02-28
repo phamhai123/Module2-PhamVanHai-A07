@@ -8,6 +8,9 @@ import mvc.utils.FileRead;
 import mvc.utils.FileWrite;
 import mvc.utils.InputUntil;
 import mvc.validate.RegexLibrary;
+
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.TreeSet;
 
 public class BookingServiceImpl implements BookingService, RegexLibrary {
@@ -24,15 +27,16 @@ public class BookingServiceImpl implements BookingService, RegexLibrary {
     @Override
     public void addBooking() {
         int bookingID = InputUntil.inputInteger("Enter id booking:",scanner);
-        String starDate = InputUntil.inputDate("Enter star day:",scanner);
-        String endDate = InputUntil.compareDate("Enter end day:",starDate,scanner);
+        Date starDate = InputUntil.inputDate("Enter star day:",scanner);
+        Date endDate = InputUntil.compareDate("Enter end day:",starDate,scanner);
         customerService.display();
         String customerId = CustomerServiceImpl.checkIdCustomer();
         facilityService.display();
         String nameServiceId  = FacilityServiceImpl.checkIdFacility();
         String[] listName = nameServiceId.split("-");
         String typeService = listName[0];
-        bookingList.add(new Booking(bookingID,starDate,endDate,customerId,nameServiceId,typeService));
+        String voucher = "none";
+        bookingList.add(new Booking(bookingID,starDate,endDate,customerId,nameServiceId,typeService,voucher));
         FileWrite.writeToFileBooking(bookingList,FILE_BOOKING);
     }
 

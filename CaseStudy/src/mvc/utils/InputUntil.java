@@ -2,6 +2,7 @@ package mvc.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -141,7 +142,24 @@ public class InputUntil {
         }
         return value;
     }
-    public static String compareDate(String message,String dateFirstInput,Scanner scanner){
+    public static String compareLocalDate(String message, LocalDate dateFirstInput, Scanner scanner){
+        SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
+        String dateEndInput = inputDate(message,scanner);
+        try {
+            Date dateFirst = dateFormat.parse(dateFirstInput);
+            Date dateEnd = dateFormat.parse(dateEndInput);
+            int result = dateFirst.compareTo(dateEnd);
+            if(result <= 0){
+                return dateEndInput;
+            }
+        } catch (ParseException e) {
+            System.out.println(MESSAGE_ERROR);
+            return compareDate(message,dateFirstInput,scanner);
+        }
+        System.out.println(MESSAGE);
+        return compareDate(message,dateFirstInput,scanner);
+    }
+    public static String compareDate(String message, String dateFirstInput, Scanner scanner){
         SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
         String dateEndInput = inputDate(message,scanner);
         try {

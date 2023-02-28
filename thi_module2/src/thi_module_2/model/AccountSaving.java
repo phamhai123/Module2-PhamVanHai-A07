@@ -2,7 +2,7 @@ package thi_module_2.model;
 
 public class AccountSaving extends AccountBank {
     private double coinSave;
-    private String daySave;
+    private String firstSave;
     private double interestRate;
     private String dateSave;
 
@@ -16,7 +16,7 @@ public class AccountSaving extends AccountBank {
     }
     public AccountSaving(double coinSave, String daySave, double interestRate, String dateSave) {
         this.coinSave = coinSave;
-        this.daySave = daySave;
+        this.firstSave = daySave;
         this.interestRate = interestRate;
         this.dateSave = dateSave;
     }
@@ -24,7 +24,7 @@ public class AccountSaving extends AccountBank {
     public AccountSaving(int id, double accountCode, String accountName, String dayCreate, double coinSave, String daySave, double interestRate, String dateSave) {
         super(id, accountCode, accountName, dayCreate);
         this.coinSave = coinSave;
-        this.daySave = daySave;
+        this.firstSave = daySave;
         this.interestRate = interestRate;
         this.dateSave = dateSave;
     }
@@ -38,11 +38,11 @@ public class AccountSaving extends AccountBank {
     }
 
     public String getDaySave() {
-        return daySave;
+        return firstSave;
     }
 
     public void setDaySave(String daySave) {
-        this.daySave = daySave;
+        this.firstSave = daySave;
     }
 
     public double getInterestRate() {
@@ -69,7 +69,7 @@ public class AccountSaving extends AccountBank {
                 ", accountName='" + super.getAccountName() + '\'' +
                 ", dayCreate='" + super.getDayCreate() + '\'' +
                 ", coinSave=" + coinSave +
-                ", daySave='" + daySave + '\'' +
+                ", daySave='" + firstSave + '\'' +
                 ", interestRate=" + interestRate +
                 ", dateSave='" + dateSave + '\'' +
                 '}';

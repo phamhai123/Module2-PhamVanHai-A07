@@ -7,11 +7,19 @@ public class PromotionController {
         int choose = FuramaController.scanner.nextInt();
         switch (choose) {
             case 1:
-                System.out.println("Display list customers use service");
+                System.out.println("Create voucher");
+                break;
             case 2:
-                System.out.println("Display list customers get voucher");
+                System.out.println("Display list customers use service");
+                break;
             case 3:
+                System.out.println("Display list customers get voucher");
+                break;
+            case 4:
                 System.out.println("Return main menu");
+                FuramaController.displayMainMenu();
+                break;
         }
+        isPromotion();
     }
 }

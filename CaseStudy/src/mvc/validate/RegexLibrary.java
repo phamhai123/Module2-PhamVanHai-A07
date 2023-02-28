@@ -3,7 +3,7 @@ package mvc.validate;
 import java.util.Scanner;
 
 public interface RegexLibrary {
-
+    String DATE_FORMAT = "dd/MM/yyyy";
     Scanner scanner = new Scanner(System.in);
     String NAME_VN_REGEX = "^[A-Za-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+$";
     String NAME_REGEX ="(?:[A-Z][a-z]{1,5} )+[A-Z][a-z]+";
@@ -19,4 +19,5 @@ public interface RegexLibrary {
     String FILE_ROOM = "D:\\Module_02\\PhamVanHai-A0722i1\\CaseStudy\\src\\mvc\\data\\room.csv";
     String FILE_VILLA = "D:\\Module_02\\PhamVanHai-A0722i1\\CaseStudy\\src\\mvc\\data\\villa.csv";
     String FILE_BOOKING = "D:\\Module_02\\PhamVanHai-A0722i1\\CaseStudy\\src\\mvc\\data\\booking.csv";
+    String FILE_CONTRACT = "D:\\Module_02\\PhamVanHai-A0722i1\\CaseStudy\\src\\mvc\\data\\contract.csv";
 }

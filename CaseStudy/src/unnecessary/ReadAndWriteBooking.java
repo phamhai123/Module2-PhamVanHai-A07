@@ -38,7 +38,8 @@ public class ReadAndWriteBooking {
                 String customerId = temp[3];
                 String nameServiceId  = temp[4];
                 String typeService = temp[5];
-                bookingList.add(new Booking(bookingId,starDate,endDate,customerId,nameServiceId,typeService));
+                String voucher = temp[6];
+                bookingList.add(new Booking(bookingId,starDate,endDate,customerId,nameServiceId,typeService,voucher));
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

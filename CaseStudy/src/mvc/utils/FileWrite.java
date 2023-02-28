@@ -1,17 +1,14 @@
 package mvc.utils;
 
 import mvc.model.booking.Booking;
+import mvc.model.booking.Contract;
 import mvc.model.facility.Facility;
 import mvc.model.person.Customer;
 import mvc.model.person.Employee;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeSet;
+import java.util.*;
 
 public class FileWrite {
     // Ghi file customer
@@ -39,15 +36,9 @@ public class FileWrite {
             for (Employee employee : list) {
                 bw.write(employee.getInfo());
             }
-
+            bw.close();
         } catch (IOException e) {
-            try {
-                bw.close();
-                fw.close();
-            } catch (Exception ex) {
-                System.out.println("File error!");
-            }
-
+            System.out.println("File error!");
         }
     }
 
@@ -76,6 +67,22 @@ public class FileWrite {
             buffered = new BufferedWriter(file);
             for (Booking inBooking : bookings) {
                 buffered.write(inBooking.getInfo());
+                buffered.newLine();
+            }
+            buffered.close();
+            file.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public static void writeToFileContract(List<Contract> contracts,String filePath){
+        FileWriter file = null;
+        BufferedWriter buffered = null;
+        try {
+            file = new FileWriter(filePath);
+            buffered = new BufferedWriter(file);
+            for (Contract inContract: contracts) {
+                buffered.write(inContract.getInfo());
                 buffered.newLine();
             }
             buffered.close();

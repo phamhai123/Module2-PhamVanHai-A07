@@ -33,6 +33,7 @@ public class InputUtil {
     }
 
     public static int inputInt(String message, Scanner scanner) {
+
         int result = 0;
         System.out.println(message);
         String inputValue = scanner.nextLine();
